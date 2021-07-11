@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
     View,
     Text,
@@ -6,10 +6,10 @@ import {
     TextInput,
     Platform,
     FlatList,
-} from "react-native";
+} from 'react-native';
 
-import { Button } from "../components/Button";
-import { SkillCard } from "../components/SkillCard";
+import { Button } from '../components/Button';
+import { SkillCard } from '../components/SkillCard';
 
 export interface SkillData {
     id: string;
@@ -17,9 +17,9 @@ export interface SkillData {
 }
 
 export function Home() {
-    const [newSkill, setNewSkill] = useState("");
+    const [newSkill, setNewSkill] = useState('');
     const [mySkills, setMySkills] = useState<SkillData[]>([]);
-    const [gretting, setGretting] = useState("");
+    const [gretting, setGretting] = useState('');
 
     function handleAddNewSkill() {
         const data = {
@@ -38,17 +38,17 @@ export function Home() {
         const currentHour = new Date().getHours();
 
         if (currentHour < 12) {
-            setGretting("Good morning");
+            setGretting('Good morning');
         } else if (currentHour >= 12 && currentHour < 18) {
-            setGretting("Good afternoon");
+            setGretting('Good afternoon');
         } else {
-            setGretting("Good night");
+            setGretting('Good night');
         }
     }, []);
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Welcome, Rodrigo</Text>
+            <Text style={styles.title}>Welcome, Raniel</Text>
 
             <Text style={styles.greetings}>{gretting}</Text>
 
@@ -82,24 +82,24 @@ export function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#121015",
+        backgroundColor: '#121015',
         paddingVertical: 70,
         paddingHorizontal: 30,
     },
     title: {
-        color: "#FFF",
+        color: '#FFF',
         fontSize: 24,
-        fontWeight: "bold",
+        fontWeight: 'bold',
     },
     input: {
-        backgroundColor: "#1F1E25",
-        color: "#FFF",
+        backgroundColor: '#1F1E25',
+        color: '#FFF',
         fontSize: 18,
-        padding: Platform.OS === "ios" ? 15 : 10,
+        padding: Platform.OS === 'ios' ? 15 : 10,
         marginTop: 30,
         borderRadius: 7,
     },
     greetings: {
-        color: "#FFF",
+        color: '#FFF',
     },
 });
